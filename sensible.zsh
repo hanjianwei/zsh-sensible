@@ -2,6 +2,10 @@
 # Utilities
 #
 
+# History
+HISTSIZE=5000
+SAVEHIST=5000
+
 # Colorful ls
 if [[ "$OSTYPE" == darwin* ]]; then
     alias ls='ls -G'
