@@ -21,11 +21,14 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 setopt HIST_BEEP                 # Beep when accessing non-existent history.
 
 # Colorful ls
-if [[ "$OSTYPE" == darwin* ]]; then
+case "$OSTYPE" in
+  darwin*|freebsd* )
     alias ls='ls -G'
-else
+    ;;
+  linux* )
     alias ls='ls --color=auto'
-fi
+    ;;
+esac
 
 #
 # Completion
