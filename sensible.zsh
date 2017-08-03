@@ -30,6 +30,9 @@ case "$OSTYPE" in
     ;;
 esac
 
+# Key bindings
+bindkey "\e[3~" delete-char
+
 #
 # Completion
 #
