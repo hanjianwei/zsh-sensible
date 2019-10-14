@@ -20,25 +20,13 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing non-existent history.
 
-# Colorful ls
-case "$OSTYPE" in
-  darwin*|freebsd* )
-    alias ls='ls -G'
-    ;;
-  linux* )
-    alias ls='ls --color=auto'
-    ;;
-esac
-
 # Key bindings
-bindkey "\e[3~" delete-char
+bindkey "\e[3~" delete-char  # Fix 'Delete' key which will insert '~' by default
 
 #
 # Completion
 #
-autoload -Uz compinit
-
-setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
+setopt COMPLETE_IN_WORD    # Tries to complete in the word at the point of the cursor
 setopt PATH_DIRS           # Perform path search even on command names with slashes.
 unsetopt CASE_GLOB         # Case-insensitive matching
 
